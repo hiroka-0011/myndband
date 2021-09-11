@@ -1,0 +1,55 @@
+<%
+  path = function(fileName) {
+    var depth = filename.replace(/\\/g, '/').split('src')[1].split('/').length - 2;
+    var path = depth > 0 ? '../'.repeat(depth) : './';
+    if ( fileName !== undefined ) {
+      path += fileName;
+    }
+    return path;
+  };
+-%>
+<!DOCTYPE html>
+<html lang='ja'>
+
+<head>
+    <meta charset="utf-8">
+    <% if (common.type == 'index') {%>
+    <title>
+    </title>
+    <% } else {%>
+    <title>株式会社myndband|ミッドバンド
+        <%= common.title %>
+    </title>
+    <% } %>
+
+    <% if (common.type === 'index') {%>
+    <meta name="description" content="">
+    <% } else { %>
+    <meta name="description" content="<%= common.description %>">
+    <% } %>
+
+    <meta name="keywords" content="<%= common.keyword %>">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="<%= common.path; %>assets/css/style.css">
+    <!-- google-font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="<%= common.path; %>assets/js/script.js"></script>
+</head>
